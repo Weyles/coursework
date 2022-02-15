@@ -9,7 +9,7 @@ export default class AddTodo extends Component {
 	handleChange = (e) => {
 		//Updating local component state
 		//Обновление состояния локального компонента
-		this.setState({ value: "" });
+		this.setState({ value: e.target.value });
 	}
 
 	clearInput = () => {
