@@ -7,6 +7,7 @@ export default class Todos extends Component {
       super(props)
         
       this.state = {
+         placeholder: "",
          inputValue: '',
          todos: [
              {
@@ -29,6 +30,7 @@ export default class Todos extends Component {
 
       this.handleDone = this.handleDone.bind(this);
       this.handleDelete = this.handleDelete.bind(this);
+      this.addTodo= this.addTodo.bind(this);
     }
 
     getTimeId() {
@@ -55,6 +57,30 @@ export default class Todos extends Component {
         this.setState({todos});
     }
 
+    handleInput = (value) => {
+        this.setState({inputValue: value,});
+    }
+
+    addTodo() {
+        if (this.state.inputValue) {
+            const todos = [...this.state.todos];
+            todos.push(
+                {
+                    id: this.getTimeId(),
+                    value: this.state.inputValue,
+                    isDone: false,
+                }
+            )
+            this.setState({todos, inputValue: "", placeholder: "",});
+        } else {
+            this.setState({placeholder: "Please, enter a task"})
+        }
+    }
+
+    clearInput = () => {
+        this.setState({inputValue: '',});
+    }
+
     render() {
     return (
       <table>
@@ -73,7 +99,13 @@ export default class Todos extends Component {
                     </tr>
                 ))
             }
-            <AddTodo />
+            <AddTodo 
+                handleInput={this.handleInput} 
+                inputValue={this.state.inputValue}
+                addTodo={this.addTodo}
+                clearInput={this.clearInput}
+                placeholder={this.state.placeholder}
+            />
         </tbody>
       </table>
     )

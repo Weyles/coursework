@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 
-export default class AddTodo extends Component {    
+export default class AddTodo extends Component {
+    handleChange = (e) => {
+        this.props.handleInput(e.target.value);
+    }
+
+    clearInputs = () => {
+        this.props.clearInput();
+        this.setState({defaultValue: ""})
+    }
+    
     render() {
     return (
         <tr>
         <td>
-            <input />
+            <input placeholder={this.props.placeholder} value={this.props.inputValue} onChange={this.handleChange} />
         </td>
         <td>
-            <button>Add task</button>
+            <button onClick={() => this.props.addTodo()}>Add task</button>
         </td>
         </tr>
     )
