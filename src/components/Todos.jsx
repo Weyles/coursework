@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Todos.module.css'
 import Todo from './Todo';
 import AddTodo from './AddTodo';
 
@@ -83,31 +84,29 @@ export default class Todos extends Component {
 
     render() {
     return (
-      <table>
-        <tbody>
-            {
-                this.state.todos.map((todo, index) => (
-                    <tr key={todo.id} >
-                        <Todo 
-                            todo={todo} 
-                            index={index + 1} 
-                            taskText={todo.value} 
-                            isDone={todo.isDone} 
-                            handleDone={this.handleDone} 
-                            handleDelete={this.handleDelete}
-                        />
-                    </tr>
-                ))
-            }
-            <AddTodo 
-                handleInput={this.handleInput} 
-                inputValue={this.state.inputValue}
-                addTodo={this.addTodo}
-                clearInput={this.clearInput}
-                placeholder={this.state.placeholder}
-            />
-        </tbody>
-      </table>
+      <div className={styles.container}>
+        {
+            this.state.todos.map((todo, index) => (
+                <div key={todo.id} className={styles.task}>
+                    <Todo 
+                        todo={todo} 
+                        index={index + 1} 
+                        taskText={todo.value} 
+                        isDone={todo.isDone} 
+                        handleDone={this.handleDone} 
+                        handleDelete={this.handleDelete}
+                    />
+                </div>
+            ))
+        }
+        <AddTodo 
+            handleInput={this.handleInput} 
+            inputValue={this.state.inputValue}
+            addTodo={this.addTodo}
+            clearInput={this.clearInput}
+            placeholder={this.state.placeholder}
+        />
+      </div>
     )
   }
 }

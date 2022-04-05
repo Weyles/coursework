@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Todo.module.css'
 
 export default class AddTodo extends Component {
     handleChange = (e) => {
@@ -12,14 +13,14 @@ export default class AddTodo extends Component {
     
     render() {
     return (
-        <tr>
-        <td>
-            <input placeholder={this.props.placeholder} value={this.props.inputValue} onChange={this.handleChange} />
-        </td>
-        <td>
-            <button onClick={() => this.props.addTodo()}>Add task</button>
-        </td>
-        </tr>
+        <div className={styles.item}>
+        <div>
+            <input className={styles.input} placeholder={this.props.placeholder} value={this.props.inputValue} onChange={this.handleChange} />
+        </div>
+        <div>
+            <button className={styles.addButton} onClick={() => this.props.addTodo()}>Add task</button>
+        </div>
+        </div>
     )
     }
 }
