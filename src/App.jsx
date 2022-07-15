@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Todos from './components/Todos';
 import styles from './App.module.css'
 
-export default class App extends Component {
-  render() {
+const App = () => {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.text}>
@@ -12,5 +11,6 @@ export default class App extends Component {
         <Todos />
       </div>
     )
-  }
 }
+
+export default App
