@@ -1,10 +1,29 @@
 .item {
     display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(187, 187, 187);
+    align-items: flex-start;
+    min-height: 0px;
+    padding: 8px 0 8px 0;
+}
+
+.bigItem {
+    display: flex;
     justify-content: space-between;
     border-top: 1px solid rgb(187, 187, 187);
     align-items: flex-start;
     min-height: 0px;
     padding: 8px 0 8px 0;
+}
+
+.inputArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonsArea {
+    display: flex;
+    margin: 15px 0 5px 0;
 }
 
 .checkbox {
@@ -21,20 +40,20 @@
     border: 0;
     background-color: rgb(235, 0, 0);
     color: white;
-    width: 70px;
+    width: 75px;
     height: 26px;
     border-radius: 4px;
-    margin: 0 5px 0 20px;
+    margin: 10px 5px 0 20px;
 }
 
 .delete:hover {
     border: 0;
     background-color: rgb(199, 0, 0);
     color: white;
-    width: 70px;
+    width: 75px;
     height: 26px;
     border-radius: 4px;
-    margin: 0 5px 0 20px;
+    margin: 10px 5px 0 20px;
 }
 
 .text {
@@ -61,6 +80,31 @@
     margin: 0 5px 0 20px;
 }
 
+.filterButton {
+    border: 0;
+    background-color: coral;
+    color: white;
+    width: 140px;
+    height: 26px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.filterButton:hover {
+    border: 0;
+    background-color: chocolate;
+    color: white;
+    width: 140px;
+    height: 26px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.filterZone {
+    display: flex;
+    margin: 10px 0 5px 5px;
+}
+
 /* .input {
     width: 100%;
     margin-left: 5px;
@@ -76,7 +120,13 @@
     background: #f2f2f2;
     padding: 5px;
     border-radius: 3px;
-    width: 340px;
+    width: 540px;
     font-size: 14px;
     margin-left: 5px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 10px 10px;
 }

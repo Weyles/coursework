@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import Todos from './components/Todos';
+import HumanResourcesDepartment from './components/HumanResourcesDepartment';
 import styles from './App.module.css'
 
 const App = () => {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.text}>
-          ToDo App
+          Відділ кадрів
         </h1>
-        <Todos />
+        <HumanResourcesDepartment />
       </div>
     )
 }
